@@ -20,16 +20,18 @@ namespace EmployeWageProject
             else
                 Console.WriteLine(" Emp is absent");
         }
-        public void EmpWage()
+        public void Parttime()
         {
             int dailyempwage = 0, emphr = 0;
-            int empcheck = random.Next(0, 2);
-            if (empcheck == FULL_TIME)
+            int empcheck = random.Next(0, 3);
+            if (empcheck == PART_TIME)
+                emphr = HALF_DAY_HR;
+            else if (empcheck == FULL_TIME)
                 emphr = FULL_DAY_HR;
             else
                 emphr = 0;
             dailyempwage = WAGE_PER_HR * emphr;
-            Console.WriteLine(" Daily Wage of Employee" + dailyempwage);
+            Console.WriteLine(" Part time Wage of Employee" + dailyempwage);
         }
 
     }
