@@ -9,7 +9,7 @@ namespace EmployeWageProject
     public class EmployeeWage
     {
 
-        const int WAGE_PER_HR = 20, FULL_DAY_HR = 8, IS_PRESENT = 1, FULL_TIME = 0, PART_TIME = 1, HALF_DAY_HR = 4;
+        const int WAGE_PER_HR = 20, FULL_DAY_HR = 8, IS_PRESENT = 1, FULL_TIME = 0, PART_TIME = 1, HALF_DAY_HR = 4, MONTH = 20;
         Random random = new Random();
         public void Attendance()
         {
@@ -20,27 +20,30 @@ namespace EmployeWageProject
             else
                 Console.WriteLine(" Emp is absent");
         }
-        public void switchcase()
+        public void Empwage()
         {
             int dailyempwage = 0, emphr = 0;
-            int empcheck = random.Next(0, 3);
-            switch (empcheck)
+            for (int i = 0; i < MONTH; i++)
             {
-                case FULL_TIME:
-                    dailyempwage = WAGE_PER_HR * emphr;
-                    Console.WriteLine(" Emp Wage for full day is " + dailyempwage);
-                    break;
-                case PART_TIME:
-                    dailyempwage = WAGE_PER_HR * emphr;
-                    Console.WriteLine(" Emp Wage for half day is " + dailyempwage);
-                    break;
-                default:
-                    emphr = 0;
-                    Console.WriteLine(" Emp is absent ");
-                    break;
+                int empcheck = random.Next(0, 3);
+                switch (empcheck)
+                {
+                    case FULL_TIME:
+                        emphr += FULL_DAY_HR;
+                        break;
+                    case PART_TIME:
+                        emphr += HALF_DAY_HR;
+                        break;
+                    default:
+                        emphr = 0;
+                        break;
+                }
             }
+            dailyempwage = WAGE_PER_HR * emphr;
+            Console.WriteLine(" Emp Wage for month is " + dailyempwage);
 
         }
+
 
     }
 }
