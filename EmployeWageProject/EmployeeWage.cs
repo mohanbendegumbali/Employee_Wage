@@ -23,7 +23,7 @@ namespace EmployeWageProject
         public void Empwage()
         {
             int dailyempwage = 0, emphr = 0;
-            for (int i = 0; i < MONTH; i++)
+            for (int i = 0; i < 20 && emphr < 100; i++)
             {
                 int empcheck = random.Next(0, 3);
                 switch (empcheck)
