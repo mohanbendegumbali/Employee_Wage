@@ -9,7 +9,7 @@ namespace EmployeeWageProject
         {
           Console.WriteLine("Employee Problem Statement");
           EmployeeWage employee = new EmployeeWage();
-          employee.Attendance();
+          employee.EmpWage();
         }
     }
 }
